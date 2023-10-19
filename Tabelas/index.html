@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pratica 3</title>
+</head>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    table td {
+        padding: 2vh;
+        width: 20vh;
+    }
+
+    .table1, .table2, .table2 {
+        margin-bottom: 4vh;
+    }
+    
+
+
+</style>
+
+<body>
+
+<main>
+    <table class="table1">
+        <tr>
+            <td style="text-align: start;">1</td>
+            <td style="text-align: start;">2</td>
+            <td style="text-align: start;">3</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td style="text-align: center;">5</td>
+            <td style="text-align: center;">6</td>
+        </tr>
+        <tr>
+            <td style="text-align:end;">7</td>
+            <td style="text-align:end;">8</td>
+            <td style="text-align:end;">9</td>
+        </tr>
+    </table>
+
+    <table class="table2">
+        <tr>
+            <td style="text-align: start;">1</td>
+            <td style="text-align: start;">2</td>
+            <td style="text-align: start;">3</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="3">4</td>
+        </tr>
+        <tr>
+            <td style="text-align:start;">7</td>
+            <td style="text-align:start;">8</td>
+            <td style="text-align:start;">9</td>
+        </tr>
+    </table>
+
+    <table class="table3">
+        <tr>
+            <td style="text-align: start;">1</td>
+            <td style="text-align: start;">2</td>
+            <td style="text-align: center;" rowspan="3">3</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;" colspan="2">4</td>
+        </tr>
+        <tr>
+            <td style="text-align:start;">7</td>
+            <td style="text-align:start;">8</td>
+        </tr>
+    </table>
+
+</main>
+
+</body>
+
+</html>

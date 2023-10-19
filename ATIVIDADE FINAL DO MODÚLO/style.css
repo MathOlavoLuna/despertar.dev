@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.conteiner{
+    display: flex;
+    background-color: #fcf6f6e7;
+    
+}
+
+
+.navegação{
+    padding-top: 340px;
+    width: 450px;
+    height: 977px;
+    background-color: rgb(236, 196, 255);
+
+}
+
+
+.imagem{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background-image:  url(Captura\ de\ tela\ 2023-09-21\ 101250.png);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.botões{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.botões > a {
+    text-decoration: none;
+}
+
+.conteudo {
+    margin: auto;
+
+    width: 100%;
+}
+
+
+.icons{
+    display: flex;
+}

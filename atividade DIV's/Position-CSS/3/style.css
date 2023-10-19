@@ -1,0 +1,21 @@
+.conteiner{
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+}   
+
+.primeiro{
+    color: azure;
+    padding: 15px;
+    background-color: darkslategrey;
+    border-radius: 15px;
+}
+
+.segundo{
+    max-height: 100px;
+    color: azure;
+    padding: 15px;
+    background-color: darkslategrey;
+    overflow: auto;
+}
+

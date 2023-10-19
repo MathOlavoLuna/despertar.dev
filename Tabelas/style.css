@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 2vh;
+    width: 20vh;
+}
+
+.table1, .table2, .table2 {
+    margin-bottom: 4vh;
+}
+
+/* Adicionando um efeito de rotação */
+.table1:hover {
+    transform: rotate(5deg);
+}
+
+/* Adicionando uma transição de cor para os elementos da tabela2 */
+.table2 td {
+    transition: background-color 0.5s ease-in-out;
+}
+
+.table2:hover td {
+    background-color: #ff7f50; /* Cor salmão, por que não? */
+}
+
+/* Adicionando uma animação de pulsação para a tabela3 */
+.table3 {
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
