@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.conteiner{
+    display: flex;
+    background-color: #fcf6f6e7;
+    min-height: 60rem;
+    
+}
+
+
+.navegação{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 270px;
+    background-color: rgb(236, 196, 255);
+
+}
+
+.navegação p {
+    margin-bottom: 0.6rem;
+}
+
+
+.imagem{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    background-image:  url(../images/1689030303340.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    border: 3px solid rgb(186, 113, 255);
+}
+
+.botões{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.botões > a {
+    text-decoration: none;
+}
+.botões > a:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.destaque{
+    color: white;
+}
+
+.conteudo {
+
+    margin: auto;
+    padding-left: 50px;
+    width: 100%;
+    
+}
+.conteudo p{
+    margin-top: 2rem;
+    font-family: 'Sometype Mono', monospace;
+    font-weight: 200;
+
+}
+#nome{
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 100;
+    font-family: 'Sometype Mono', monospace;
+    ;
+}
+
+.conteudo h3{
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.conteudo  span{
+    color: blueviolet;
+}
+
+.icons{
+    display: flex;
+    padding-top: 40px;
+}
+
+.icons > a > img{
+    margin-right: 40px;
+}
+
+.icons > a > img:hover{
+    width: 34px;
+    height: 34px;
+    transition: 0.5s;
+    background-color: rgba(137, 43, 226, 0.39);
+    border-radius: 50px;
+}

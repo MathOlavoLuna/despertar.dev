@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -9,26 +10,32 @@
 .conteiner{
     display: flex;
     background-color: #fcf6f6e7;
+    min-height: 60rem;
     
 }
 
 
 .navegação{
-    padding-top: 340px;
-    width: 450px;
-    height: 977px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 270px;
     background-color: rgb(236, 196, 255);
 
 }
 
+.navegação p {
+    margin-bottom: 0.6rem;
+}
 
 .imagem{
     margin: auto;
     width: 200px;
     height: 200px;
-    background-image:  url(Captura\ de\ tela\ 2023-09-21\ 101250.png);
+    background-image:  url(../images/1689030303340.jpg);
     background-size: cover;
     border-radius: 50%;
+    border: 3px solid rgb(186, 113, 255);
 }
 
 .botões{
@@ -39,14 +46,34 @@
 .botões > a {
     text-decoration: none;
 }
-
-.conteudo {
-    margin: auto;
-
-    width: 100%;
+.botões > a:hover{
+    color: white;
+    transition: 0.6s;
 }
 
+.destaque{
+    color: white;
+}
+
+.conteudo {
+    display: flex;
+    margin: auto;
+    padding-left: 50px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
 
 .icons{
     display: flex;
+    padding-top: 40px;
 }
+.icons a{
+    margin-right: 50px;
+}
+
+
+
+
+
+
