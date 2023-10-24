@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática - Lógica simples e estruturas condicionais </title>
+</head>
+
+<body>
+    <script>
+        //1.
+        const graus = Number(prompt("Qual a temperatura em Celsius?:"))
+
+        const grausParaF = (graus * 9 / 5) + 32;
+        document.write(`A temperatura ${graus}° em Fahrenheit fica °${grausParaF}.`)
+
+        //2 
+        const diaSemana = Number(prompt('Digite um Número entre 1 e 7'))
+        let dia = '';
+
+        switch (diaSemana) {
+            case 1:
+                dia = 'Segunda'
+                break
+            case 2:
+                dia = 'Terça'
+                break
+            case 3:
+                dia = 'Quarta'
+                break
+            case 4:
+                dia = 'Quinta'
+                break
+            case 5:
+                dia = 'Sexta'
+                break
+            case 6:
+                dia = 'Sabado'
+                break
+            case 7:
+                dia = 'Domingo'
+                break
+        }
+        document.write(`</br> </br>O dia da semana é: ${dia}`);
+
+
+        //3
+
+        const num = Number(prompt('Digite um número para saber se ele é possitivo ou negativo!!: '))
+
+        if (num === 0) {
+            document.write("</br> </br> O número é zero!")
+        } else if (num < 0) {
+            document.write("</br> </br> O número é Negativo!");
+        } else {
+            document.write("</br> </br> O número é Positivo!");
+        }
+
+        //4
+
+        let custoFornecedor = 100;
+        let porcentagemD = 0.28;
+        let impostos = 0.45;
+        let totalCarro = Number((custoFornecedor * impostos) + (custoFornecedor * porcentagemD) + custoFornecedor);
+
+        document.write(`</br> </br>O Custo final ao consumidor será  R$:${totalCarro}`);
+
+        //5
+
+        const altura = Number(prompt("Digite sua altura: "))
+        const peso = Number(prompt("Digite seu Peso: "))
+        const imc = peso / (altura * altura)
+
+        if (imc < 18.5) {
+            document.write("</br> </br> Você está abaixo da faixa de peso ideal")
+        } else if (imc > 24.99) {
+            document.write("</br> </br> Você está acima da faixa de peso ideal")
+        } else if (imc >= 18.5 || imc <= 24.99) {
+            document.write('</br> </br> Você está dentro da faixa de peso ideal!!!')
+        }
+
+        //6
+        const n1 = Number(prompt('Digite Primeiro número: '))
+        const n2 = Number(prompt('Digite Segundo número: '))
+        const operação = Number(prompt('Digite o número da operação, 1 para Soma, 2 para Subtração, 3 para Divisão, 4 para Multiplicação: '))
+        let operaNome = '';
+        let soma = 0;
+
+        switch (operação){
+            case 1:
+            soma = n1 + n2;
+            operaNome = '+'
+            break
+
+            case 2:
+            soma = n1 - n2;
+            operaNome = '-'
+            break
+
+            case 3:
+            soma = n1 / n2;
+            operaNome = '/'
+            break
+
+            case 4:
+            soma = n1 * n2;
+            operaNome = '*'
+            break
+
+            default:
+                soma = n1 + n2;
+        }
+        document.write(`</br> </br>O valor de ${n1} ${operaNome} ${n2} é igual a: ${soma}`);
+
+
+        7
+        let contaUsuario = 1000;
+        let saqueBruto = Number(prompt('Qual a quantidade que você deseja Sacar?: '));
+        let saque = saqueBruto
+        saque += 5;
+
+        if(saque <= contaUsuario && saque > 0){
+            if(saque % 5 == 0){
+            alert("SAQUE AUTORIZADO!!!");
+            document.write(`</br> </br> </br>Você sacou R$: ${saqueBruto} com a taxa de serviço o valor do saque ficou ${saque -= 0.50}, seu saldo agora é de R$:${contaUsuario - (saque -= 0.50)} `) 
+            } else{
+                alert("SAQUE NÃO AUTORIZADO, TENTE USAR VALORES MUTIPLOS DE 5 (EX: 5, 10, 15, 20, 25, 30)")
+            }
+        }else{
+            alert('SAQUE NÂO AUTORIZADO!!!, valor de saque maior que saldo da conta, ou valor negativo ')
+        }
+        
+
+        8
+        const idade = 25;
+        const pesoA = 61;
+        let categoria = '';
+        if(idade <= 12){
+            categoria = 'Infantil'
+        } else if (idade == 13 || idade <= 16){
+            if(pesoA <= 40){
+                categoria = 'Juvenil leve'
+            }else{
+                categoria = 'Juvenil pesado'
+            }
+        } else if(idade >= 17 || idade <= 24){
+            if(pesoA <= 45){
+                categoria = 'Sênior leve'
+            }else if (pesoA <= 60){
+                categoria = 'Senior Médio'
+            } else{
+                categoria = 'Senior pesado'
+            }
+        } if(idade > 24){
+            categoria = 'Veterano'
+        }
+
+        document.write("Sua categoria é : " + categoria)
+
+
+        const veloCarro = 120;
+        let valorMulta = 0;
+        const veloP = 80;
+        if(veloCarro > veloP){
+            alert("VOCÊ FOI MULTADO POR EXCESSO DE VELOCIDADE")
+            valorMulta = (veloCarro - veloP) * 5;
+            document.write(`</br></br></br>O valor da sua multa foi de : ${valorMulta}R$`)
+        } else{
+            alert("VOCÊ RESPEITOU A LEI DE TRANSITO")
+        }
+    </script>
+</body>
+
+</html>
