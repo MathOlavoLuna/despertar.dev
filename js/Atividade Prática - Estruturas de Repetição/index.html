@@ -43,11 +43,11 @@
         e a de lucas é ${lucas.toFixed(2)}  `)
 
         // 3
-        const nTabuada = Number(prompt('Digite um número: '))
-        const iteracoes = Number(prompt('Digite a quantidade de intereações: '))
+        const nTabuada = Number(prompt('Digite o número que você quer saber a tabuada: '))
+        const iteracoes = Number(prompt(`você quer que a tabuada do número ${nTabuada} vá até aonde? até 10 até 15?: `))
 
         for(let i=0; i<= iteracoes; i++){
-            console.log(`${i} x ${nTabuada} = ${i * nTabuada}`);
+            console.log(`${nTabuada} x ${i} = ${i * nTabuada}`);
         }
 
 
