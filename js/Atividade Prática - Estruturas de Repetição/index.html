@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática - Estruturas de Repetição</title>
+</head>
+
+<body>
+    <script>
+        // 1
+        let alturaMaior = 0;
+        let alturaMenor = 999;
+
+        for(i = 0; i < 2; i++ ){
+            const altura = Number(prompt("Digite a altura: "))
+
+            if(altura > alturaMaior){
+                alturaMaior = altura;
+            } 
+            if (altura < alturaMenor){
+                alturaMenor = altura;
+            }
+        }
+
+        document.write(`a menor altura é: ${alturaMenor} </br> </br>
+        e a altura maior é: ${alturaMaior}`)
+
+        // 2
+        let pedro = 1.50;
+        let lucas = 1.10;
+        let anos = 0;
+
+        while(lucas <= pedro ){
+            pedro += 0.02;
+            lucas += 0.03;
+
+            anos += 1;
+        }
+        document.write(`</br></br>em ${anos - 1} anos lucas terá o mesmo tamanho que pedro.`)
+        document.write(` </br> </br> depois de ${anos} anos, a altura de pedro é ${pedro.toFixed(2)}, </br>
+        e a de lucas é ${lucas.toFixed(2)}  `)
+
+        // 3
+        const nTabuada = Number(prompt('Digite um número: '))
+        const iteracoes = Number(prompt('Digite a quantidade de intereações: '))
+
+        for(let i=0; i<= iteracoes; i++){
+            console.log(`${i} x ${nTabuada} = ${i * nTabuada}`);
+        }
+
+
+        // 4
+        let multiplo3 = ''
+        let multiplo5 = ''
+
+
+        for( i=1; i <= 250; i++){
+            if(i % 3 == 0){
+                multiplo3 += i + ", "
+            } else if( i % 5 == 0 ){
+                multiplo5 += i + ", "
+            }
+
+        }
+
+        document.write(`Divisivel por 3: </br> ${multiplo3} </br> </br>`)
+        document.write(`Divisivel por 5: </br> ${multiplo5} </br> </br>`)
+
+        // 5
+        const numerozinXD = Number(prompt("Digite um valor"))
+
+        for(n = 1; n <= numerozinXD; n++){
+            
+            document.write(`${n}`)
+        }
+        document.write(`FIM!`);
+
+
+        // 6
+        for (let i = 30; i >= 1; i--) {
+
+            let primo = true;
+
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    primo = false;
+                    break;
+                }
+            }
+            if (primo) {
+                contagem += `[${i}] ,`
+            } else {
+                contagem += i + ","
+            }
+        }
+
+
+
+        // 7
+        let todosValores = 0;
+        let numerosPositivos = 0;
+        let numerosNegativos = 0;
+        for (c = 1; c <= 10; c++) {
+            const numero = Number(prompt(`Digite até 10 valores: `))
+            todosValores += numero;
+
+            if (numero > 0) {
+                numerosPositivos += 1;
+
+            } else {
+                numerosNegativos += 1;
+
+            }
+
+        }
+
+        document.write(`</br></br> Média Aritmética: ${(todosValores / 10).toFixed(2)}
+        </br></br> Quantidade de valores postivos: ${numerosPositivos} 
+        </br></br> Quantidade de valores negativos: ${numerosNegativos}
+        </br></br> Negativos em porcentagem: ${(numerosNegativos / 10) * 100}%
+        </br></br> Positivos em porcentagem: ${(numerosPositivos / 10) * 100}%`)
+    </script>
+</body>
+
+</html>
