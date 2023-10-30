@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+            let valor = Number(prompt("Insira o valor que deseja a ser Sacado: "))
+            const c50 = 50
+            const c10 = 10
+            const c5 = 5
+            const c1 = 1
+
+            while (valor > 0) {
+                if (valor >= c50) {
+                    let cCedula50 = parseInt(valor / 50)
+    
+                    document.write(`Número de Cédulas de GC$ 50,00 : ${cCedula50} </br>`)
+                    valor -= cCedula50 * 50
+                }
+                else if (valor >= c10) {
+                    let cCedula10 = parseInt(valor / 10)
+    
+                    document.write(`Número de Cédulas de GC$ 10,00 : ${cCedula10} </br>`)
+                    valor -= cCedula10 * 10
+                } else if (valor >= c5) {
+                    let cCedula5 = parseInt(valor / 5)
+
+                    document.write(`Número de Cédulas de GC$ 5,00 : ${cCedula5} </br>`)
+                    valor -= cCedula5 * 5
+                } else if (valor >= c1) {
+                    let cCedula1 = parseInt(valor / 1)
+
+                    document.write(`Número de Cédulas de GC$ 1,00 : ${cCedula1} </br>`)
+                    valor -= cCedula1 * 1
+                }
+            }
+    </script>
+</body>
+
+</html>
