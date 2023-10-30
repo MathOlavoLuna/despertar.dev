@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 6</title>
+</head>
+<body>
+    <p>ESSA ATIVIDADE ESTÁ EM CONSOLE!!</p>
+    <br>
+    <a href="atividade5.html">Atividade anterior</a>
+</body>
+</html>
+
+<script>
+    const largura = Number(prompt("Digite a largura do terreno: "))
+    const comprimento = Number(prompt("Digite o comprimento do terreno: "))
+    const area = parseInt(largura * comprimento);
+    if(area >= 100 && area <= 500){
+        console.log(`Seu terreno de ${area}m² é um TERRENO MASTER`);
+    } else if(area < 100){
+        console.log(`Seu terreno de ${area}m² é um TERRENO POPULAR`);
+    } else if(area > 500){
+        console.log(`Seu terreno de ${area}m² é um TERRENO VIP`);
+    }
+
+</script>

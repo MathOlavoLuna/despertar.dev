@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 5</title>
+</head>
+<body>
+    <br>
+    <a href="atividade6.html">PROXIMA - LINK ATIVIDADE 6 </a>
+    <br>
+    <a href="atividade4.html">Atividade anterior</a>
+</body>
+</html>
+<script>
+    const km = Number(prompt("Qual a distancia que você quer percorrer em KM?: "))
+    let passagem;
+    if (km <= 200){
+        passagem = km * 0.50;
+    } else if (km > 200){
+        passagem = km * 0.45;
+    }
+
+    document.write(`</br>O preço da sua passagem será de: ${passagem}R$`)
+   
+
+
+</script>

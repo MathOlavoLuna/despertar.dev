@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 4</title>
+</head>
+<body>
+    <a href="atividade5.html">PROXIMA - atividade 5</a>
+    <br>
+    <a href="atividade3.html">Atividade anterior</a>
+</body>
+</html>
+
+<script>
+    let nome = prompt("Digite seu nome: ");
+    let sexo = prompt("Digite seu sexo: [F/M]").toUpperCase();
+    let valorCompra = Number(prompt('Valor da compra: '));
+    let desconto;
+    if (sexo === 'M'){
+        desconto = 0.05;
+    } else if (sexo === "F"){
+        desconto = 0.13;
+    }
+
+    console.log(`O valor da compra de ${valorCompra}R$ com o desconto por conta do seu genêro ${sexo} o valor fica ${valorCompra - (valorCompra * (desconto))}`);
+</script>

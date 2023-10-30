@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+    <a href="atividade3.html"><br>PROXIMA - LINK ATIVIDADE 3 <br></a>
+    <br>
+    <a href="atividade1.html">atividade anterior</a>
+</body>
+
+</html>
+
+<script>
+    document.write("<br/> <br/> <strong>Exercicio 2</strong> <br/>")
+
+    let salarioHomens = 0;
+    let salarioMulheres = 0;
+    continuar = true;
+
+    while (continuar) {
+        salario = Number(prompt("Qual o salário?"));
+        sexo = prompt("O salário é pago a um homem ou a uma mulher?")
+        if (sexo === "homem") {
+            salarioHomens += salario;
+        } else if (sexo === "mulher") {
+            salarioMulheres += salario;
+        }
+        continuar = confirm("Deseja continuar?")
+    }
+
+    document.write(`<br/> <br/> O salário pago aos homens é de R$ ${ salarioHomens }`)
+    document.write(`<br /> O salário pago as mulheres é de R$ ${ salarioMulheres }`)
+</script>
