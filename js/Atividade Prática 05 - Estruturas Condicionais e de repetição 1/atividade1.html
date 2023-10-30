@@ -13,18 +13,18 @@
 </html>
 <script>
     let idade;
-    let cIdade;
-    let totalIdade;
+    let contador = 0;
+    let totalIdade = 0;
 
     while(idade != 999){
         idade = Number(prompt('Digite uma idade: '))
 
         if(idade != 999){
-            cIdade++;
+            contador++;
             totalIdade += idade;
         }
     }  
-    console.log(`
-    Total de alunos na turma: ${cIdade}
-    A média das idades é: ${(totalIdade/cIdade).toFixed(2)}`);
+    console.log(`Total de alunos na turma: ${contador}`);
+    console.log(`A média das idades é: ${(totalIdade/contador).toFixed(2)}`);
+    
 </script>
