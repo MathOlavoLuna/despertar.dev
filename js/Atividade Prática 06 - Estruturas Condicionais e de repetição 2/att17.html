@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17</title>
+</head>
+<body>
+    <a href="att18.html">proxima atividade</a>
+    <br>
+    <br>
+</body>
+<script>
+    //7. porcentagemTotal
+    const totalEleitores =  Number(prompt("total de eleitores: "))
+        const vB = Number(prompt("Votos em branco: "))
+        const vN = Number(prompt("Votos Nulos: "))
+
+        const porcentagemTotal = ((totalEleitores - (vB + vN)) / totalEleitores) * 100
+        const porcVB = ((vB)  / totalEleitores) * 100
+        const porcVN = ((vN) / totalEleitores) * 100
+
+        document.write(`</br></br>Pocentagem total dos votos ${porcentagemTotal}%, porcentagem de votos em branco ${porcVB}% porcentagem de votos nulos ${porcVN}%`)
+</script>
+</html>

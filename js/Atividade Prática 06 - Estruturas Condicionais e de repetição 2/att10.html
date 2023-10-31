@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+</head>
+<body>
+    <a href="att11.html">Proxima Atividade</a>
+    <br>
+</body>
+</html>
+<script>
+    //Sla enunciado estranho, então acabei usando a formula de IMC
+    
+    const altura = Number(prompt("Digite sua altura: "))
+    const peso = Number(prompt("Digite seu peso: "))
+    alert("1 para feminino e 2 para masculino")
+    const sexo = Number(prompt("Digite seu sexo: "))
+    let pesoIdeal;
+    
+    if(sexo === 2){
+        pesoIdeal = peso / (altura * altura);
+        console.log(pesoIdeal);
+        if(pesoIdeal < 18){
+            console.log(`Você está abaixo do peso`);
+        } else if (pesoIdeal > 30) {
+            console.log(`Você está acima do peso`);
+        }
+    } else if (sexo === 1){
+        pesoIdeal = peso / (altura * altura);
+        console.log(pesoIdeal);
+        if(pesoIdeal < 18){
+            console.log(`Você está abaixo do peso`);
+        } else if (pesoIdeal > 30) {
+            console.log(`Você está acima do peso`);
+        }
+    }
+</script>

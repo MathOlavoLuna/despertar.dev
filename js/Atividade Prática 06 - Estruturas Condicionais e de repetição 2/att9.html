@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9</title>
+</head>
+<body>
+    <a href="att10.html">Proxima Atividade</a>
+    <br>
+</body>
+<script>
+//Não fui capaz, fiz como o do ultimo exercicío porque todas outras forma que tentei n deram certo
+    const numero = Number(prompt("Digite um número que você quer saber se é primo: "))
+        for (let i = numero; i >= 2; i--) {
+
+            let primo = true;
+
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {
+                    primo = false;
+                    break;
+                }
+            }
+            if (primo) {
+                if(i == numero){
+                    console.log(`o número ${i} é primo `)
+                }
+            }else{
+                if(i == numero){
+                    console.log(`o número ${i} não é primo `)
+                }
+            } 
+        }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    <a href="att8.html">Proxima Atividade</a>
+    <br>
+</body>
+<script>
+
+    let contador = 10;
+    do {
+        if(contador == 10){
+            soma = contador; 
+        }else{
+            soma += contador;
+        }
+        contador++
+        if(contador <= 100){
+            document.write(`${contador}, `)
+        }
+    } while (contador <= 100);
+
+    document.write(`</br>Número final: ${soma}`)
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18</title>
+</head>
+<body>
+    <a href="att1.html">primeiro exercicio</a>
+    <br>
+    <br>
+    <p>console</p>
+</body>
+</html>
+<script>
+    const precoTabela = Number(prompt('Digite o valor do produto: '));
+    const vezes = Number(prompt("Quer fazer em quantas vezes?: "));
+    let parcela;
+    let acrescimo;
+    let acrescimoPlus;
+
+    if(vezes <= 2 && vezes <= 5){
+
+        parcela = precoTabela / vezes;
+        console.log('SEM ACRÉSCIMO');
+
+    } else if(vezes >= 6 && vezes <= 10){
+
+        acrescimo = precoTabela + (precoTabela * 0.06);
+        acrescimoPlus = acrescimo - precoTabela;
+        parcela = precoTabela / vezes;
+        console.log(`com acrescimo de ${acrescimoPlus}R$ no valor total, indo para ${acrescimo}.`);
+
+    } else if(vezes >= 11 && vezes <= 15){
+
+        acrescimo = precoTabela + (precoTabela * 0.13)
+        acrescimoPlus = acrescimo - precoTabela;
+        parcela = precoTabela / vezes;
+        console.log(`com acrescimo de ${acrescimoPlus}R$ no valor total, indo para ${acrescimo}.`);
+
+    }
+
+
+    console.log(`Sua compra de ${precoTabela} em ${vezes} vezes, por mes você pagará ${parcela.toFixed(2)}`);
+</script>
