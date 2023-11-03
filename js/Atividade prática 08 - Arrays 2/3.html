@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <a href="4.html">Proxima Atividade</a>
+    <br>
+    <br>
+</body>
+</html>
+<script>
+    let numPerfeito = []
+    let aumentador = 0;
+    //porfavor sem mais números perfeitos, tive que entender o que é um número perfeito e ficar 1hr tentando e retentando.
+
+    for(let index = 2; numPerfeito.length < 4; index++){
+        for(let j = 1; j < index; j++){
+            if(index % j === 0){
+                aumentador += j;
+            }
+        }
+        if ( index === aumentador){
+            numPerfeito.push(index)
+        }
+        aumentador = 0;
+    }
+    document.write(`Primeiro 4 números perfeitos: `)
+    document.write(`${numPerfeito.join(",  ")}`)
+  
+
+</script>

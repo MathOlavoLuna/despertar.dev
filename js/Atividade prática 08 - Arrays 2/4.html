@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <a href="4.html">Proxima Atividade</a>
+    <br>
+    <br>
+</body>
+</html>
+<script>
+    let dez = [];
+    let continua = true;
+
+    while(dez.length < 10){
+        dez.push(Math.round(parseInt(Math.random() * 20) + 1));
+    }
+    console.log(dez);
+
+    const digita = Number(prompt("Digite um número para saber se ele já está na lista: "))
+
+    for(numero of dez){
+        if(digita === numero){
+            document.write(`O número ${digita} já está dentro da lista!`)
+            continua = false;
+            break
+            
+
+        }
+    }
+    console.log(continua);
+    if(continua === true){
+        document.write(`O número ${digita} não está dentro da lista!`)
+        
+    }
+
+    
+
+</script>
