@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let continua = true;
+    const pDesempregadas = [];
+    const pEmpregradaMenorA = [];
+    const pEmpregradaMaiorA = []; 
+
+    do{
+        const nome = prompt('Digite o nome: ')
+        const idade = Number(prompt("digite sua idade"))
+        let trabalha = confirm('Você trabalha?');
+        let salario = 0;
+        if(trabalha){
+            let salario = Number(prompt('Qual o seu Salário?: '))
+            if(salario < 2500){
+                const pEmpregradaMenor = {
+                    nome,
+                    idade,
+                    salario
+                }
+                pEmpregradaMenorA.push(pEmpregradaMenor)
+            } else if( salario > 2500){
+                const pEmpregradaMaior = {
+                    nome,
+                    idade,
+                    salario
+                } 
+                pEmpregradaMaiorA.push(pEmpregradaMaior)
+
+            }
+
+        }else{
+            const pDesem = {
+                nome,
+                idade,
+                salario
+            }
+            pDesempregadas.push(pDesem)
+        }
+        continua = confirm('Quer adicionar mais pessoas?')
+
+    } while(continua)
+
+    document.write("Pessoas Desempregadas: <br>")
+    for(let pessoa in pDesempregadas){
+        document.write(`<br>Nome: ${pDesempregadas[pessoa].nome}, Idade: ${pDesempregadas[pessoa].idade} `)
+    }
+    
+    document.write("<br><br>Pessoas Empregradas que recebem menos de 2500: <br>")
+
+    for(let pessoa in pEmpregradaMenorA){
+        document.write(`<br>Nome: ${pEmpregradaMenorA[pessoa].nome}, Idade: ${pEmpregradaMenorA[pessoa].idade}, Salario: ${pEmpregradaMenorA[pessoa].salario} `)
+    }
+    
+    document.write("<br><br>Pessoas Empregradas que recebem mais que 2500: <br>")
+    for(let pessoa in pEmpregradaMaiorA){
+        document.write(`<br>Nome: ${pEmpregradaMaiorA[pessoa].nome}, Idade: ${pEmpregradaMaiorA[pessoa].idade}, Salario: ${pEmpregradaMaiorA[pessoa].salario} `)
+    }
+</script>

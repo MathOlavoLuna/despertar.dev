@@ -1,0 +1,36 @@
+<body>
+    <a href="4.html">Proxima Atividade</a>
+    <br>
+    <br>
+    <p>atividade em console</p>
+</body>
+<script>
+    //3
+    primeiroAluno = {
+        Nome: 'Cleusa',
+        Nota1: 9,
+        Nota2: 8,
+
+    }
+
+    segundoAluno = {
+        Nome: 'Juninho',
+        Nota1: 7,
+        Nota2: 7,
+
+    }
+
+    for(let inf in primeiroAluno){
+        console.log(`${inf}: ${primeiroAluno[inf]}`);
+    }
+
+    console.log(`Média primeiro aluno: ` + (primeiroAluno.Nota1 + primeiroAluno.Nota2) / 2 );
+
+    for(let inf in segundoAluno){
+        console.log(`${inf}: ${segundoAluno[inf]}`);
+    }
+
+    console.log(`Média segundo aluno: ` + (segundoAluno.Nota1 + segundoAluno.Nota2) / 2 );
+    console.log(`--------------------`);
+    console.log(`Média da turma: ` + (primeiroAluno.Nota1 + primeiroAluno.Nota2 + segundoAluno.Nota1 + segundoAluno.Nota2) / 4 )
+</script>
