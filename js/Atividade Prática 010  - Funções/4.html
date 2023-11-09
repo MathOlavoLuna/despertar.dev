@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <a href="5.html">proxima atividade</a>
+    <p>console</p>
+    <br>
+    <br>
+</body>
+</html>
+<script>
+    // Crie uma função que recebe por parâmetro o tempo de duração de
+    // uma fábrica expressa em segundos e retorna esse tempo em    horas,
+    // minutos e segundos.
+
+    // Ex:
+    // Entrada: 3672
+    // Saída: 1:1:12
+
+
+    function segundoParaHora(seg){
+        let minuto = seg / 61
+        let hora = (seg / 60) / 60
+        console.log(seg %= 3600)
+        
+        console.log(seg %= 60)
+        return `${parseInt(hora)} : ${parseInt(minuto)} : ${Math.floor(seg)}`
+    }
+
+    console.log(segundoParaHora(3672));
+</script>

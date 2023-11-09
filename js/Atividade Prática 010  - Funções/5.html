@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <a href="6.html">proxima atividade</a>
+    <p>console</p>
+    <br>
+    <br>
+</body>
+</html>
+<script>
+    function perfect(valor) {
+    if (valor <= 1)
+        return false;
+
+
+    let somaDivisores = 1;
+
+    for (let i = 2; i < valor; i++) {
+        if (valor % i === 0)
+            somaDivisores += i;
+    }
+    return somaDivisores === valor;
+    }
+
+    console.log(perfect(28));
+</script>
