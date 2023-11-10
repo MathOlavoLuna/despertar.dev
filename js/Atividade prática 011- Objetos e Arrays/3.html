@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let continua = true;
+    const pessoinhas = [];
+
+    do{
+        const nome = prompt('Digite o nome: ')
+        const idade = Number(prompt("digite sua idade"))
+        let trabalha = confirm('Você trabalha?');
+        let salario = 0;
+
+        if(trabalha) salario = Number(prompt('Qual o seu Salário?: '))
+
+        const pessoas = {
+            nome,
+            idade,
+            salario,
+        }
+
+        pessoinhas.push(pessoas)
+        continua = confirm('Quer adicionar mais pessoas?')
+
+    } while (continua);
+
+
+    const desempregadas = pessoinhas.filter((pessoa)=>{
+           if(pessoa.salario <= 0) return pessoa;        
+    })
+
+    const empregadasMaior = pessoinhas.filter((pessoa)=>{
+            if(pessoa.salario > 2500) return pessoa;        
+    })
+
+    const empregadasMenor = pessoinhas.filter((pessoa)=>{
+            if(pessoa.salario > 0 && pessoa.salario < 2500) return pessoa;        
+    })
+
+    document.write(`Pessoas Desempregadas: <br><br>`)
+    desempregadas.forEach((pessoa)=>{
+        document.write(`<br>Nome: ${pessoa.nome}, Idade:${pessoa.idade}`);
+    })
+    
+
+    document.write(`<br>----------------------------<br>`)
+    document.write(`Pessoas Empregadas Com Salario Maior que 2500: <br><br>`)
+    empregadasMaior.forEach((pessoa)=>{
+        document.write(`<br>Nome: ${pessoa.nome}, Idade:${pessoa.idade}`);
+    })
+
+
+    document.write(`<br>----------------------------<br>`)
+    document.write(`Pessoas Empregadas Com Salario Menor que 2500: <br><br>`)
+    empregadasMenor.forEach((pessoa)=>{
+        document.write(`<br>Nome: ${pessoa.nome}, Idade:${pessoa.idade}`);
+    })
+</script>
