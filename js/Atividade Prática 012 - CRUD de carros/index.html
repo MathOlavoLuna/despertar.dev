@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Prática - CRUD de carros</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    listaCarros = [
+    {
+        id: 1699995699113,
+            modelo:'Onix' ,
+            marca: 'Chevrolet',
+            ano: 2018,
+            cor: 'Preto',
+            preco: 105000
+    },
+    {   id: 1699995722287,
+            modelo:'Onix2' ,
+            marca: 'Chevrolet',
+            ano: 2020,
+            cor: 'Branco',
+            preco: 205000
+    },
+    {   id: 1699994989609,
+            modelo:'Fusca' ,
+            marca: 'Volkswagen',
+            ano: 1975,
+            cor: 'Azul',
+            preco: 20000
+    },
+    {   id: 1699995651200,
+            modelo:'Fusca2' ,
+            marca: 'Volkswagen',
+            ano: 1976,
+            cor: 'Rosa',
+            preco: 25000
+    },
+    {   id: 1699995651260,
+            modelo:'Uno' ,
+            marca: 'Fiat',
+            ano: 2013,
+            cor: 'Vermelho',
+            preco: 13000
+    }
+    ]
+    alert(`Veja a lista de carros antes de usar as outras opções!!!!`)
+
+    alert(`
+    Bem-vindo ao sistema de CRUD de veículos
+    No momento, o sistema tem ${listaCarros.length} carros cadastrados`)
+    let opcao = true;
+    while(opcao){
+        opcao = Number(prompt(`
+    Escolha uma das opções para interagir com o sistema:
+
+    [ 1 ] Cadastrar véiculo
+
+    [ 2 ] Listar todos véiculos
+
+    [ 3 ] Filtrar véiculos por marca
+
+    [ 4 ] Atualizar véiculo cadastrado
+
+    [ 5 ] Remover véiculo
+
+    [ 6 ] Sair do Sistema `));
+
+        if (opcao === 1) cadastraVeiculo();
+
+        if (opcao === 2) listaVeiculos();
+
+        if(opcao === 3){
+            const marquinha = prompt(`Qual marca de carros você quer ver?: `)
+            filtraVeiculos(marquinha);
+
+        }
+        if (opcao === 4) atualizaVeiculo()
+
+        if (opcao === 5) achaID(), removeVeiculo(Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `)))
+
+        if(opcao === 6) opcao = false;
+    }
+   
+
+
+    
+
+    //Function´s
+    function cadastraVeiculo(){
+        const veiculo = {
+            id: Date.now(),
+            modelo: prompt(`Qual o modelo do carro?:`),
+            marca: prompt(`Qual a marca do carro?:`),
+            ano: prompt(`Qual o ano do carro?:`),
+            cor: prompt(`Qual a cor do carro?:`),
+            preco: Number(prompt(`Qual o preço do carro?:`))
+        }
+
+        listaCarros.push(veiculo)
+        console.log(veiculo);
+    }
+
+    function listaVeiculos(){
+        listaCarros.forEach( carro => {
+            document.write(`<br><br>ID: ${carro.id}<br>Modelo: ${carro.modelo}<br>Marca: ${carro.marca}<br>Ano: ${carro.ano}<br>Cor: ${carro.cor}<br>Preço: R$${carro.preco}`);
+        });
+    }
+
+    function filtraVeiculos(marca){
+        const filtroMarca = listaCarros.filter(carro =>{
+            return carro.marca === marca;
+        })
+
+        filtroMarca.forEach(carro =>{
+            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}`)
+        })
+    }
+
+    function achaID(){
+        alert(`[DIGITE O NOME DO CARRO PARA SABER O ID]`)
+        const nCarro = prompt(`Digite o nome do carro:`)
+
+        const filtro = listaCarros.filter(carro =>{
+            if(nCarro === carro.modelo) return carro.id
+        })
+        
+        filtro.forEach(id=>{
+            alert(`COPIEI O ID${id.id}`)
+        })
+    }
+
+    function atualizaVeiculo(){
+        const nCarro = prompt(`Digite o nome do carro:`)
+
+        const filtro = listaCarros.filter(carro =>{
+            if(nCarro === carro.modelo) return carro.id
+        })
+        filtro.forEach(id=>{
+            console.log(id.id)
+        })
+
+        const id = Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `))
+
+        filtro.forEach(carro =>{
+            if (carro.id === id) return carro.cor = prompt(`Qual a cor nova? `), carro.preco = prompt(`Qual o preço novo?`)
+        })
+    }
+
+    function removeVeiculo(id){
+        console.log(id);
+        const filtroV = listaCarros.findIndex(carro => carro.id === id)
+        console.log(filtroV);
+        listaCarros.splice(filtroV, 1)
+    }
+</script>
