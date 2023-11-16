@@ -53,8 +53,8 @@
     alert(`
     Bem-vindo ao sistema de CRUD de veículos
     No momento, o sistema tem ${listaCarros.length} carros cadastrados`)
-    let opcao = true;
-    while(opcao){
+
+    do{
         opcao = Number(prompt(`
     Escolha uma das opções para interagir com o sistema:
 
@@ -83,12 +83,8 @@
 
         if (opcao === 5) achaID(), removeVeiculo(Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `)))
 
-        if(opcao === 6) opcao = false;
-    }
+    } while(opcao != 6)
    
-
-
-    
 
     //Function´s
     function cadastraVeiculo(){
@@ -106,8 +102,19 @@
     }
 
     function listaVeiculos(){
+        listaCarros.sort((a,b) => b.preco - a.preco)
+
         listaCarros.forEach( carro => {
-            document.write(`<br><br>ID: ${carro.id}<br>Modelo: ${carro.modelo}<br>Marca: ${carro.marca}<br>Ano: ${carro.ano}<br>Cor: ${carro.cor}<br>Preço: R$${carro.preco}`);
+            console.log(`ID: ${carro.id}
+            Modelo: ${carro.modelo}
+            Marca: ${carro.marca}
+            Ano: ${carro.ano}
+            Cor: ${carro.cor}
+            Preço: R$${carro.preco}
+            ----------------------------`)
+
+            document.write(`<br><br>ID: ${carro.id}<br>Modelo: ${carro.modelo}<br>Marca: ${carro.marca}<br>Ano: ${carro.ano}<br>Cor: ${carro.cor}<br>Preço: R$${carro.preco}
+            <br>--------------------------------------------------`);
         });
     }
 
@@ -115,7 +122,14 @@
         const filtroMarca = listaCarros.filter(carro => carro.marca === marca)
 
         filtroMarca.forEach(carro =>{
-            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}`)
+            console.log(`
+            ID: ${carro.id}
+            Modelo: ${carro.modelo}
+            Cor: ${carro.cor}
+            Preço: R$:${carro.preco}
+            ----------------------------`)
+            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}
+            <br>--------------------------------------------------------`)
         })
     }
 
