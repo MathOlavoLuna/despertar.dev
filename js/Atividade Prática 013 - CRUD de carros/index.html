@@ -112,9 +112,7 @@
     }
 
     function filtraVeiculos(marca){
-        const filtroMarca = listaCarros.filter(carro =>{
-            return carro.marca === marca;
-        })
+        const filtroMarca = listaCarros.filter(carro => carro.marca === marca)
 
         filtroMarca.forEach(carro =>{
             document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}`)
@@ -152,9 +150,7 @@
     }
 
     function removeVeiculo(id){
-        console.log(id);
         const filtroV = listaCarros.findIndex(carro => carro.id === id)
-        console.log(filtroV);
         listaCarros.splice(filtroV, 1)
     }
 </script>
