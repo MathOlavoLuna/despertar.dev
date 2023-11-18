@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade Prática - CRUD de carros</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 <script>
     listaCarros = [
-    {
-        id: 1699995699113,
-            modelo:'Onix' ,
+        {
+            id: 1699995699113,
+            modelo: 'Onix',
             marca: 'Chevrolet',
             ano: 2018,
             cor: 'Preto',
             preco: 105000
-    },
-    {   id: 1699995722287,
-            modelo:'Onix2' ,
+        },
+        {
+            id: 1699995722287,
+            modelo: 'Onix2',
             marca: 'Chevrolet',
             ano: 2020,
             cor: 'Branco',
             preco: 205000
-    },
-    {   id: 1699994989609,
-            modelo:'Fusca' ,
+        },
+        {
+            id: 1699994989609,
+            modelo: 'Fusca',
             marca: 'Volkswagen',
             ano: 1975,
             cor: 'Azul',
             preco: 20000
-    },
-    {   id: 1699995651200,
-            modelo:'Fusca2' ,
+        },
+        {
+            id: 1699995651200,
+            modelo: 'Fusca2',
             marca: 'Volkswagen',
             ano: 1976,
-            cor: 'Rosa',
+            cor: 'Branco',
             preco: 25000
-    },
-    {   id: 1699995651260,
-            modelo:'Uno' ,
+        },
+        {
+            id: 1699995651260,
+            modelo: 'Uno',
             marca: 'Fiat',
             ano: 2013,
             cor: 'Vermelho',
             preco: 13000
-    }
+        }
     ]
     alert(`Veja a lista de carros antes de usar as outras opções!!!!`)
 
@@ -54,7 +61,7 @@
     Bem-vindo ao sistema de CRUD de veículos
     No momento, o sistema tem ${listaCarros.length} carros cadastrados`)
 
-    do{
+    do {
         opcao = Number(prompt(`
     Escolha uma das opções para interagir com o sistema:
 
@@ -68,26 +75,57 @@
 
     [ 5 ] Remover véiculo
 
-    [ 6 ] Sair do Sistema `));
+    [ 6 ] Filtrar por Preço
+    
+    [ 7 ] Carro Mais Caro
+
+    [ 8 ] Agrupar Carros por marca
+
+    [ 9 ] Media de preços de todos os carros
+
+    [ 10 ] Listar Veiculos Alfabeticamente
+
+    [ 11 ] Ver Carros Por Cor
+    [ 12 ] Pesquise qualquer coisa dentro do sistema
+    [ 13 ] Sair do Sistema `));
 
         if (opcao === 1) cadastraVeiculo();
 
         if (opcao === 2) listaVeiculos();
 
-        if(opcao === 3){
+        if (opcao === 3) {
             const marquinha = prompt(`Qual marca de carros você quer ver?: `)
             filtraVeiculos(marquinha);
-
         }
+
         if (opcao === 4) atualizaVeiculo()
 
         if (opcao === 5) achaID(), removeVeiculo(Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `)))
 
-    } while(opcao != 6)
-   
+        if (opcao === 6) filtraPreco(Number(prompt(`Preço Minimo: `)), Number(prompt(`Preço Maximo: `)))
+
+        if (opcao === 7) maisCaro()
+
+        if (opcao === 8) agrupaCarros()
+
+        if (opcao === 9) mediaPrecos()
+
+        if (opcao === 10) listaVeiculosAlfa()
+
+        if (opcao === 11) corCar()
+
+        if (opcao === 12) pesquisa(prompt(`Qual critério você quer usar para o filtro? 
+        [Marca]
+        [Ano]
+        [Cor]`).toLowerCase())
+
+    } while (opcao != 13)
+
 
     //Function´s
-    function cadastraVeiculo(){
+
+    //1
+    function cadastraVeiculo() {
         const veiculo = {
             id: Date.now(),
             modelo: prompt(`Qual o modelo do carro?:`),
@@ -100,11 +138,148 @@
         listaCarros.push(veiculo)
         console.log(veiculo);
     }
+    //2
+    function listaVeiculos() {
+        listaCarros.sort((a, b) => b.preco - a.preco)
 
-    function listaVeiculos(){
-        listaCarros.sort((a,b) => b.preco - a.preco)
+        listaCarros.forEach(carro => {
+            console.log(`ID: ${carro.id}
+            Modelo: ${carro.modelo}
+            Marca: ${carro.marca}
+            Ano: ${carro.ano}
+            Cor: ${carro.cor}
+            Preço: R$${carro.preco}
+            ----------------------------`)
 
-        listaCarros.forEach( carro => {
+            document.write(`<br><br>ID: ${carro.id}<br>Modelo: ${carro.modelo}<br>Marca: ${carro.marca}<br>Ano: ${carro.ano}<br>Cor: ${carro.cor}<br>Preço: R$${carro.preco}
+            <br>--------------------------------------------------`);
+        });
+    }
+    //3
+    function filtraVeiculos(marca) {
+        const filtroMarca = listaCarros.filter(carro => carro.marca === marca)
+
+        filtroMarca.forEach(carro => {
+            console.log(`
+            ID: ${carro.id}
+            Modelo: ${carro.modelo}
+            Cor: ${carro.cor}
+            Preço: R$:${carro.preco}
+            ----------------------------`)
+            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}
+            <br>--------------------------------------------------------`)
+        })
+    }
+    //custom
+    function achaID() {
+        alert(`[DIGITE O NOME DO CARRO PARA SABER O ID]`)
+        const nCarro = prompt(`Digite o nome do carro:`)
+
+        const filtro = listaCarros.filter(carro => {
+            if (nCarro === carro.modelo) return carro.id
+        })
+
+        filtro.forEach(id => {
+            alert(`COPIE O ID${id.id}`)
+        })
+    }
+    //4
+    function atualizaVeiculo() {
+        const nCarro = prompt(`Digite o nome do carro:`)
+
+        const filtro = listaCarros.filter(carro => {
+            if (nCarro === carro.modelo) return carro.id
+        })
+        filtro.forEach(id => {
+            console.log(id.id)
+        })
+
+        const id = Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `))
+
+        filtro.forEach(carro => {
+            if (carro.id === id) return carro.cor = prompt(`Qual a cor nova? `), carro.preco = prompt(`Qual o preço novo?`)
+        })
+    }
+    //5
+    function removeVeiculo(id) {
+        const filtroV = listaCarros.findIndex(carro => carro.id === id)
+        listaCarros.splice(filtroV, 1)
+    }
+
+    //6
+    function filtraPreco(pMinimo, pMaximo) {
+        const filtroP = listaCarros.filter(carro => carro.preco > pMinimo && carro.preco < pMaximo)
+
+        filtroP.forEach(carro => {
+            console.log(`
+            ID: ${carro.id}
+            Modelo: ${carro.modelo}
+            Cor: ${carro.cor}
+            Preço: R$:${carro.preco}
+            ----------------------------`)
+            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}
+            <br>--------------------------------------------------------`)
+        });
+    }
+    //7
+    function maisCaro() {
+        let mCarro = 0
+        const maisCarro = listaCarros.forEach(carro => {
+            if (carro.preco > mCarro) mCarro = carro.preco
+        })
+
+        const mCarro2 = listaCarros.filter(carro => carro.preco === mCarro)
+
+        mCarro2.forEach(carro => {
+            console.log(`Carro mais Caro
+            Marca: ${carro.marca}Preço: R$:${carro.preco}`)
+
+            document.write(`<br>Carro Mais Caro<br>Marca: ${carro.marca}| Preço: R$:${carro.preco}`)
+        })
+    }
+    //8
+    function agrupaCarros() {
+        const objetoMarcas = {}
+        listaCarros.forEach(carro => {
+            if (!objetoMarcas[carro.marca]) objetoMarcas[carro.marca] = []
+            objetoMarcas[carro.marca].push(carro)
+        })
+
+        
+        for(let marca in objetoMarcas){
+            console.log(`--------------------`);
+            console.log(`Carros da marca: ${marca}`);
+            for(carro of objetoMarcas[marca]){
+                console.log(carro.modelo);
+            }
+        };
+
+
+
+
+
+    }
+    //9
+    function mediaPrecos() {
+        let soma = 0;
+
+        listaCarros.forEach(carro => {
+            soma += carro.preco
+        })
+        const media = soma / listaCarros.length
+        return console.log(`A média de todos os preços é R$:${media.toFixed(2)}`);;
+    }
+    //10
+    function listaVeiculosAlfa() {
+        listaCarros.sort((a, b) => {
+            if (a.modelo < b.modelo) {
+                return -1
+            } else {
+                return true;
+            }
+        })
+
+        listaCarros.forEach(carro => {
             console.log(`ID: ${carro.id}
             Modelo: ${carro.modelo}
             Marca: ${carro.marca}
@@ -118,53 +293,56 @@
         });
     }
 
-    function filtraVeiculos(marca){
-        const filtroMarca = listaCarros.filter(carro => carro.marca === marca)
+    //11
+    function corCar() {
+        const objetoCor = {}
+        let contCores = 0;
+        listaCarros.forEach(carro => {
+            if (!objetoCor[carro.cor]) objetoCor[carro.cor] = []
 
-        filtroMarca.forEach(carro =>{
-            console.log(`
-            ID: ${carro.id}
-            Modelo: ${carro.modelo}
-            Cor: ${carro.cor}
-            Preço: R$:${carro.preco}
-            ----------------------------`)
-            document.write(`<br><br> ID: ${carro.id} | Modelo: ${carro.modelo}| Cor: ${carro.cor} | Preço: R$:${carro.preco}
-            <br>--------------------------------------------------------`)
+            objetoCor[carro.cor].push(carro)
+
         })
+
+        for(let cor in objetoCor){
+            contCores = 0;
+            console.log(`--------------------`);
+            console.log(`Quantia de carros da cor: ${cor}`);
+            for(carro of objetoCor[cor]){
+                ++contCores
+            }
+            console.log(contCores);
+        };
     }
 
-    function achaID(){
-        alert(`[DIGITE O NOME DO CARRO PARA SABER O ID]`)
-        const nCarro = prompt(`Digite o nome do carro:`)
 
-        const filtro = listaCarros.filter(carro =>{
-            if(nCarro === carro.modelo) return carro.id
-        })
-        
-        filtro.forEach(id=>{
-            alert(`COPIEI O ID${id.id}`)
-        })
-    }
 
-    function atualizaVeiculo(){
-        const nCarro = prompt(`Digite o nome do carro:`)
+    //12 Buscar Carros por Características Específicas: Implemente uma função que permite buscar carros por múltiplos critérios, como cor, marca, ano, etc. Como se fosse uma barra de pesquisa.
+    function pesquisa(pesquisa) {
+        const criterio = pesquisa;
+        let caso;
+        listaCarros.filter(carro => {
+            switch (criterio) {
+                case 'cor':
+                    caso = carro.cor
+                    break;
 
-        const filtro = listaCarros.filter(carro =>{
-            if(nCarro === carro.modelo) return carro.id
-        })
-        filtro.forEach(id=>{
-            console.log(id.id)
-        })
+                case 'marca':
+                    caso = carro.marca
+                    break
 
-        const id = Number(prompt(`Para atualizar um carro em especifico digite o ID abaixo: `))
-
-        filtro.forEach(carro =>{
-            if (carro.id === id) return carro.cor = prompt(`Qual a cor nova? `), carro.preco = prompt(`Qual o preço novo?`)
-        })
-    }
-
-    function removeVeiculo(id){
-        const filtroV = listaCarros.findIndex(carro => carro.id === id)
-        listaCarros.splice(filtroV, 1)
+                case 'ano':
+                    caso = carro.ano
+                    break
+                default:
+                    console.log('Filtro inválido');
+                    break;
+            }
+            
+            console.log(`Carros filtrados por ${criterio}
+            ${carro.modelo}
+            ${caso}
+            ------------------------`)
+        });
     }
 </script>
