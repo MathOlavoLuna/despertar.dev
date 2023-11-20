@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade prática 12 - Arrays, objetos e funções</title>
+</head>
+<body>
+    <p>NO CONSOLE</p>
+</body>
+</html>
+<script>
+    const data = [
+        {
+            nome: 'Roger Medeiros',
+            sexo: 'M',
+            salario: 3250,
+        },
+        {
+            nome: 'Carolina Silva',
+            sexo: 'F',
+            salario: 1200,
+        },
+        {
+            nome: 'Cristina Avila',
+            sexo: 'F',
+            salario: 8100,
+        },
+        {
+            nome: 'Gustavo Hoffman',
+            sexo: 'M',
+            salario: 5200.35,
+        },
+        {
+            nome: 'Eva Trindade',
+            sexo: 'F',
+            salario: 2501,
+        },
+        {
+            nome: 'Andre Mathias',
+            sexo: 'M',
+            salario: 1750,
+        },
+        {
+            nome: 'Joice Castro da Silva',
+            sexo: 'F',
+            salario: 3350.25,
+        }]
+    //1
+    console.log(`Pessoas Total: ${data.length}`);
+    let cont = 0;
+    let soma = 0; 
+    let somaM = 0;
+
+    //2
+    data.forEach(item => {
+        if (item.sexo === "F") cont++
+
+        if(item.sexo === "M") somaM += item.salario
+
+        soma += item.salario
+    })
+
+    console.log(`Femininas: ${cont}`);
+
+    //3
+    console.log(`Soma de todos salários R$:${soma}`);
+
+    //4
+    console.log(`Média de salário de todas pessoas R$:${(soma / data.length).toFixed(2)} `);
+
+    //5
+    console.log(`Soma dos Salários dos Homens R$:${somaM}`);
+
+    //6
+    console.log(`Média dos Salários dos Homens R$:${(somaM / data.length).toFixed(2)}`);    
+
+    //7
+    const funSome = data.some(item => item.salario > 7000)
+    console.log(funSome);
+
+    //8
+    const acha = data.findIndex(item => item.nome === 'Eva Trindade')
+    console.log(acha);
+
+    //9
+    const silva = data.filter( item => item.nome.includes('Silva'))
+    silva.forEach(item =>{
+        console.log(item);
+    })
+
+    //10
+    const novoMap = data.map(item => item.nome)
+    novoMap.forEach(item =>{
+        console.log(item);
+    })
+</script>
