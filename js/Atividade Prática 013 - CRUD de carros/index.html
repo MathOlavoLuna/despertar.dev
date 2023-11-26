@@ -320,6 +320,8 @@
     //12 Buscar Carros por Características Específicas: Implemente uma função que permite buscar carros por múltiplos critérios, como cor, marca, ano, etc. Como se fosse uma barra de pesquisa.
     function pesquisa(pesquisa) {
         const criterio = pesquisa;
+        const elemento = prompt(`Qual ${criterio} você quer?
+        EX: se vc escolheu cor especifique ela!`)
         let caso;
         listaCarros.filter(carro => {
             switch (criterio) {
@@ -339,10 +341,10 @@
                     break;
             }
             
-            console.log(`Carros filtrados por ${criterio}
-            ${carro.modelo}
-            ${caso}
-            ------------------------`)
+            if(caso.includes(elemento)){
+                console.log(`${carro.modelo} com a ${caso} procurando a ${elemento}`);
+            }
         });
     }
+
 </script>
