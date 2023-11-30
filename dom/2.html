@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+</head>
+
+<body>
+    <button onclick="incrementar()">INCREMENTAR</button>
+    <button onclick="zerarContador()">ZERAR CONTADOR</button>
+    <p id="paragra">O contador está com 0 cliques</p>
+    <a href="index.html">EX1</body>
+
+</html>
+<script>
+    let cont = 0
+    function incrementar() {
+        cont++
+        const paragrafo = document.querySelector('#paragra').innerText = `O contador está com ${cont} cliques`
+        
+    }
+
+    function zerarContador() {
+        cont = 0
+        const paragrafo = document.querySelector('#paragra').innerText = ``
+    }
+
+</script>
