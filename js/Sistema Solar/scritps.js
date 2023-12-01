@@ -120,7 +120,8 @@ api.get(`bodies`).then((result) => {
     console.log(planetaOrbitado);
 
     //16 Média da Massa dos Planetas: Use o método reduce para calcular a média da massa de todos os planetas e imprimir o resultado. 
-    const media = somaMassa / éPlaneta.length
+    const media = menores.reduce((acc, planeta) => acc + planeta.mass.massValue, 0)
+    
     console.log((media).toFixed(2))
 
     //17 Calcule a distância entre Saturno e Plutão. Utilize o perihelion e o aphelion para calcular a menor distância possível entre os planetas
