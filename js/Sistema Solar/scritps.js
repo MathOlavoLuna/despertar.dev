@@ -36,7 +36,7 @@ api.get(`bodies`).then((result) => {
 
     //8
     const menores = éPlaneta.filter(planeta => planeta.meanRadius < 25000)
-    const somaMassa = menores.reduce((acc, planeta) => acc + planeta.mass.massValue, 0)
+    const somaMassa = menores.reduce((acc, planeta) => acc + (planeta.mass.massValue ) * (10 ** planeta.mass.massExponent), 0)
     
     console.log(`SOMA DAS MASSAS DOS PLANETAS: ${somaMassa.toFixed(2)}`);
 
@@ -120,9 +120,11 @@ api.get(`bodies`).then((result) => {
     console.log(planetaOrbitado);
 
     //16 Média da Massa dos Planetas: Use o método reduce para calcular a média da massa de todos os planetas e imprimir o resultado. 
-    const media = menores.reduce((acc, planeta) => acc + planeta.mass.massValue, 0)
+    const somMass = éPlaneta.reduce((acc, planeta) => acc + planeta.mass.massValue * (10 ** planeta.mass.massExponent), 0)
+    console.log('Média da massa dos Planetas:');
+    console.log(somMass / éPlaneta.length)
+
     
-    console.log((media).toFixed(2))
 
     //17 Calcule a distância entre Saturno e Plutão. Utilize o perihelion e o aphelion para calcular a menor distância possível entre os planetas
     //perihelion mais perto
@@ -155,22 +157,20 @@ api.get(`bodies`).then((result) => {
     massaDoPlanetas.sort((a, b) => a.massValue - b.massValue)
 
     console.log(massaDoPlanetas);
-    let m1;
-    let m2
-    massaDoPlanetas.forEach((planeta,i) => {
-        if(planeta.massValue === 4.86747) m1 = planeta.massValue
-        if(planeta.massValue === 5.68336) m2 = planeta.massValue
+    let m1 = 4.86747 * (10 ** 24)
+    let m2 = 5.68336 * (10 ** 26)
+    let mediana = (m1 + m2 ) / 2
+
+    console.log(mediana);
+    novoPlanetas.reduce((vt, vp) =>{
+        let um = vt.mass.massValue
+        if(um <= mediana && um >= mediana){
+            return console.log(vt.englishName)
+        } else {
+            return console.log(vp.englishName)
+        }
     })
-    const mediana = (m1 + m2) / 2
-   
-
-
-
-
-
-
-
-
+    
 }).catch((err) => {
     console.log(err);
 })
