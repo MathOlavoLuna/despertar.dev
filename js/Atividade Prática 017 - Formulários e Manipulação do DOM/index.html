@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários e Manipulação do DOM</title>
+</head>
+
+<body>
+    <h1>Formulário</h1>
+    <form id="VTNC">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+
+            <label for="nome">Nome:</label>
+            <input required type="text" id="nome"> <br><br>
+
+            <label for="adress">Endereço:</label>
+            <input required type="text" id="adress"> <br><br>
+
+            <label for="city">Cidade:</label>
+            <input required type="text" id="city"> <br><br>
+
+            <select required name="estados" id="select">
+                <option value="">Selecion Um Estado</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="SP">São Paulo</option>
+            </select>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Dados Profissionais</legend>
+            <p>Natureza do Cargo</p>
+
+            <input checked name="natureza" id="gerencia" value="Gerência" type="radio">
+            <label for="gerencia">Gerência</label>
+
+            <input name="natureza" id="financeiro" value="Financeiro" type="radio">
+            <label for="financeiro">Financeiro</label>
+
+            <input name="natureza" id="recepcao" value="Recepção" type="radio">
+            <label for="recepcao">Recepção</label>
+
+            <input name="natureza" id="administrativo" value="Administrativo" type="radio">
+            <label for="administrativo">Administrativo</label>
+
+            <input name="natureza" id='juridico' value="Jurídico" type="radio">
+            <label for="juridico">Jurídico</label>
+
+            <p>Área de interesse</p>
+            <input name="checks" id="Computação" type="checkbox" required>
+            <label for="Computação">Computação</label>
+
+            <input name="checks" id="Biologia" type="checkbox">
+            <label for="Biologia">Biologia</label>
+
+            <input name="checks" id="Meio-Ambiente" type="checkbox">
+            <label for="Meio-Ambiente">Meio Ambiente</label>
+
+            <input name="checks" id="Engenharia" type="checkbox">
+            <label for="Engenharia">Engenharia</label>
+
+            <input name="checks" id="História" type="checkbox">
+            <label for="História">História</label> <br><br>
+
+
+            <label for="mini">Mini-curriculo</label>
+            <textarea name="mini" id="mini" cols="30" rows="10"></textarea>
+
+        </fieldset name="checks">
+        <br>
+        <input value="funcionapfv" type="submit">
+        <button>Limpar</button>
+    </form>
+    <br>
+</body>
+<script>
+    const container = document.getElementById('VTNC')
+
+    container.addEventListener('submit', (e)=>{
+    
+
+        e.preventDefault()
+        console.log(nome.value);
+        console.log(adress.value);
+        console.log(city.value);
+
+        console.log(select.value);
+
+        const checks = document.getElementsByName('checks')
+        checks.forEach(check =>{
+            if(check.checked){
+                console.log(check.id);
+            }
+            
+        })
+    })
+
+
+</script>
+</html>
