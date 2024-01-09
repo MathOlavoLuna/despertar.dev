@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+#rickMorty-icon{
+    width: 3%;
+}
+
+.title{
+    color: #1d7237;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title input{
+    width: 30%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    border-color: #8484842a;
+    
+}
+.title-card{
+    color: #0b7e19;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0px;
+    flex-direction: column;
+}
+
+.row{
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    display: flex;
+    width: 500px;
+    margin: auto ;
+    padding-bottom: 2%;
+}
+
+
+.status::marker{
+    color: black;
+}
+
+.status-alive::marker{
+    color: green
+}
+
+.status-dead::marker{
+    color: red
+}
+
+.imgMsm{
+    width: 300px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+
+.pad{
+    padding: 10px 0px;
+}
+
+#portal{
+    width: 30%;
+}
+
+.status-geral{
+    display: flex;
+}
+
+.status-geral > p {
+    margin: 0px 25px;
+}
+
+#ESPAÇO{
+    padding-top: 9%;
+}
+
+.paginacao{
+    display: flex;
+    align-items: center;
+}
+
+.paginacao > button{
+    background-color: #D2E054;
+    padding: 10px;
+    border: 0px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.paginacao > p{
+    padding: 0px 20px;
+}
+
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: #154b25 ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #848484;
+}
+
+@media (max-width: 1550px){
+    .card {
+        width: 500px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .imgMsm{
+        width: 500px;
+        border-radius: 0px;
+    }
+
+
+    header{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 950px){
+    .card {
+        width: 100%;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .imgMsm{
+        width:70%;
+    }
+}
+@media (max-width: 750px) {
+    .row{
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .imgMsm{
+        width: 300px;
+    }
+   
+}

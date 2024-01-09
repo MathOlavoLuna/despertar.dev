@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img id="rickMorty-icon" src="./img/rickMorty-Icon.png" alt="">
+    </header>
+
+    <div class="title">
+        <h1>API de Rick and Morty</h1>
+        <input class="searchBar" type="search" placeholder="Pesquise">
+    </div>
+
+    <main>
+
+        <div class="conteiner">
+            
+            <div class="row">
+                    
+            </div>
+            
+            <img id="portal" src="img/portal.png" alt="">
+
+            <div class="paginacao">
+                <button class="prev">Anterior</button> <p class="current">1</p> <button class="next">Próximo</button>
+            </div>
+            
+        </div> 
+        
+        <hr>
+        
+    </main>
+
+    <footer>
+        <div class="status-geral">
+            <p class="char"></p>
+            <p class="loc"></p>
+            <p class="ep"></p>
+        </div>
+        
+        <p id="ESPAÇO">Desenvolvido por <span>Matheus Luna</span> em 2023</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

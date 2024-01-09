@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.conteiner{
+    height: 100vh;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.circulo{
+    background-color: rgb(231, 205, 255);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+.quadrado{
+    background-color: rgb(231, 205, 255);
+    width: 100px;
+    height: 100px;
+}
+
+.quadrados{
+    display: flex;
+    justify-content: space-between;
+}
+
+.circulos{
+    display: flex;
+    align-self: flex-end;
+}
+
+
+
+.um{
+ order: 0;
+}
+
+.dois{
+    order: 1;
+}
+
+.tres{
+    order: 2;
+}
