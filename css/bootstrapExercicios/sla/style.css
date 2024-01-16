@@ -1,0 +1,49 @@
+.cor1{
+    border: 3px solid rgb(186, 113, 255);
+}
+
+.navegação{
+    background-color: rgb(236, 196, 255);
+}
+
+
+.conteudo p{
+    margin-top: 2rem;
+    font-family: 'Sometype Mono', monospace;
+    font-weight: 200;
+
+}
+#nome{
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 100;
+    font-family: 'Sometype Mono', monospace;
+    ;
+}
+
+.conteudo h3{
+    color: rgba(0, 0, 0, 0.74);
+}
+
+.conteudo  span{
+    color: blueviolet;
+}
+
+.mexeu:hover{
+    transition: 0.5s;
+    background-color: rgba(137, 43, 226, 0.39);
+    border-radius: 50px;
+}
+
+.botões{
+    color: black;
+}
+
+.botões:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.fundo{
+    background-color: rgb(255, 245, 214);
+}

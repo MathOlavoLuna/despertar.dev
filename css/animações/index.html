@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+
+            background-color: blue;
+
+            animation: andaBaixo 3s ease infinite;
+            animation-delay: 1.5s;
+            animation-play-state: none;
+
+
+        }
+
+        .element2 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+
+            background-color: rgb(255, 0, 191);
+
+            animation: andaBaixo 3s ease infinite;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        @keyframes andaBaixo {
+            10%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateX(300px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translate(300px, 300px);
+            }
+
+            80%{
+                transform: translateY(300px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+       
+    </style>
+</head>
+
+<body>
+
+    <div class="element"></div>
+
+    <div class="element2"></div>
+</body>
+
+</html>
