@@ -33,19 +33,35 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" >
       <div class="col">
-        <form id="form-edit-message">
+        <form class="needs-validation"  id="form-edit-message" novalidate>
           <div class="form-control bg-transparent border-0 ">
             <label for="title-edit">Título</label>
-            <input type="text" id="title-edit" placeholder="Insira um título para o recado" value="" />
+            <input type="text" id="title-edit" placeholder="Insira um título para o recado" value="" required />
+
+            <div class="valid-feedback">
+              Preenchido!
+            </div>
+            <div class="invalid-feedback">
+              Porfavor, preencha esse campo
+            </div>
           </div>
 
           <div class="form-control bg-transparent border-0 ">
             <label for="description-edit">Descrição</label>
             <textarea class="h-50 " type="text" id="description-edit" placeholder="Insira uma descrição para o recado"
-              value=""></textarea>
+              value="" required></textarea>
+            
+              <div class="valid-feedback">
+                Preenchido!
+              </div>
+              <div class="invalid-feedback">
+                Porfavor, preencha esse campo
+              </div>
           </div>
+
+          
 
           <button class="btn-submit" type="submit">Atualizar Recado</button>
         </form>

@@ -38,14 +38,28 @@
 
     <div class="row">
       <div class="col-12">
-        <form class="m-3  " id="form-new-message">
+        <form class="m-3  needs-validation" id="form-new-message" novalidate>
           <div class="form-control bg-transparent border-0 ">
             <label for="title">Título</label>
-            <input type="text" id="title" placeholder="Insira um título para o recado" />
+            <input type="text" id="title" placeholder="Insira um título para o recado" required />
+
+            <div class="valid-feedback">
+              Preenchido!
+            </div>
+            <div class="invalid-feedback">
+              Porfavor, preencha esse campo
+            </div>
           </div>
           <div class="form-control bg-transparent border-0">
             <label for="description">Descrição</label>
-            <textarea class="h-25 " type="text" id="description" placeholder="Insira uma descrição para o recado"></textarea>
+            <textarea class="h-25 " type="text" id="description" placeholder="Insira uma descrição para o recado" required></textarea>
+
+            <div class="valid-feedback">
+              Preenchido!
+            </div>
+            <div class="invalid-feedback">
+              Porfavor, preencha esse campo
+            </div>
           </div>
           <button class="btn-submit">Cadastrar Recado</button>
           <button class="btn-submit" type="reset">Resetar</button>
