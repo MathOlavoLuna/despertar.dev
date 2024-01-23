@@ -33,6 +33,51 @@
       </div>
     </div>
 
+    <div class="row mb-5">
+      <div class="col d-flex align-items-center flex-column  ">
+        <p>Cadastrar Recado</p>
+        <img src="images/botao-adicionar.png" class="add-message" data-bs-toggle="modal" data-bs-target="#add-mess"></img>
+
+        <div class="modal fade " id="add-mess">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <form class="m-3  needs-validation" id="form-new-message" novalidate>
+                  <div class="form-control bg-transparent border-0 ">
+                    <label for="title">Título</label>
+                    <input type="text" id="title" placeholder="Insira um título para o recado" required />
+                    <div class="valid-feedback">
+                      Preenchido!
+                    </div>
+                    <div class="invalid-feedback">
+                      Porfavor, preencha esse campo
+                    </div>
+                  </div>
+                  <div class="form-control bg-transparent border-0">
+                    <label for="description">Descrição</label>
+                    <textarea class="h-25 " type="text" id="description"
+                      placeholder="Insira uma descrição para o recado" required></textarea>
+                    <div class="valid-feedback">
+                      Preenchido!
+                    </div>
+                    <div class="invalid-feedback">
+                      Porfavor, preencha esse campo
+                    </div>
+                  </div>
+                  <button class="btn-submit">Cadastrar Recado</button>
+                  <button class="btn-submit" type="reset">Resetar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
     <div class="row">
       <div class="col">
         <div class="messages-list">
@@ -52,8 +97,10 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/f9e19193d6.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/newMessage.js"></script>
   <script src="js/api.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/deleteMessage.js"></script>

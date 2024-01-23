@@ -216,3 +216,9 @@ a {
 .pagination button.active {
   background-color: #0a936a;
 }
+
+.add-message {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}

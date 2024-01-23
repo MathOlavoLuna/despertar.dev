@@ -28,12 +28,13 @@ async function createNewMessage(message) {
     const response = await api.post('/notes', message)
 
     if (response.status === 201) {
-      alert('Recado cadastrado com sucesso!')
+      if (titleInput.value && descriptionInput.value) {
+        alert('Recado cadastrado com sucesso!')
 
-      titleInput.value = ""
-      descriptionInput.value = ""
-
-      location.href = "listar-recados.html"
+        titleInput.value = ""
+        descriptionInput.value = ""
+        location.reload()
+      }
     }
   } catch (error) {
     console.log('Erro ao cadastrar recado', error)
