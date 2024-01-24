@@ -36,7 +36,8 @@
     <div class="row mb-5">
       <div class="col d-flex align-items-center flex-column  ">
         <p>Cadastrar Recado</p>
-        <img src="images/botao-adicionar.png" class="add-message" data-bs-toggle="modal" data-bs-target="#add-mess"></img>
+        <img src="images/botao-adicionar.png" class="add-message" data-bs-toggle="modal"
+          data-bs-target="#add-mess"></img>
 
         <div class="modal fade " id="add-mess">
           <div class="modal-dialog">
@@ -71,6 +72,45 @@
             </div>
           </div>
         </div>
+
+        <div  class="modal fade" id="edit-mess">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <form class="needs-validation" id="form-edit-message" novalidate>
+                  <div class="form-control bg-transparent border-0 ">
+                    <label for="title-edit">Título</label>
+                    <input type="text" id="title-edit" placeholder="Insira um título para o recado" value="" required />
+
+                    <div class="valid-feedback">
+                      Preenchido!
+                    </div>
+                    <div class="invalid-feedback">
+                      Porfavor, preencha esse campo
+                    </div>
+                  </div>
+
+                  <div class="form-control bg-transparent border-0 ">
+                    <label for="description-edit">Descrição</label>
+                    <textarea class="h-50 " type="text" id="description-edit"
+                      placeholder="Insira uma descrição para o recado" value="" required></textarea>
+
+                    <div class="valid-feedback">
+                      Preenchido!
+                    </div>
+                    <div class="invalid-feedback">
+                      Porfavor, preencha esse campo
+                    </div>
+                  </div>
+
+
+
+                  <button class="btn-submit" type="submit">Atualizar Recado</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -97,13 +137,16 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/f9e19193d6.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="js/newMessage.js"></script>
   <script src="js/api.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/deleteMessage.js"></script>
+  <script src="js/editMessage.js"></script>
 </body>
 
 </html>

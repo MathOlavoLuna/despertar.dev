@@ -60,10 +60,9 @@ async function fetchMessages(page) {
         <p class="card-description">${message.description}</p>
         <div class="card-icons">
           <i class="fas fa-solid fa-trash" data-id=${message.id}></i>
-          <i class="fas fa-regular fa-edit" data-id=${message.id}></i>
+          <i class="fas fa-regular fa-edit" data-bs-toggle="modal" data-bs-target="#edit-mess" data-id=${message.id}></i>
         </div>
       `
-
       messagesContainer.appendChild(messageCard)
 
       const deleteIcon = messageCard.querySelector('.fa-trash')
@@ -75,28 +74,21 @@ async function fetchMessages(page) {
       })
 
       const editIcon = messageCard.querySelector('.fa-edit')
+
       editIcon.addEventListener('click', () => {
+        const editModal = new Bootstrap.modal('#edit-mess') 
         const messageId = editIcon.getAttribute('data-id')
 
-        navigateToEditPage(messageId)
+        editModal.show(messadeId)
+        console.log(messageId);
       })
     });
-
-    if (messages.length === 0) {
-      const h3 = document.createElement('h3')
-      h3.textContent = 'Nenhum recado cadastrado.'
-      messagesContainer.appendChild(h3)
-    }
-  } catch (error) {
-    console.log('Erro ao buscar mensagens', error)
+  } catch(error) {
+    console.log(error);
   }
-}
 
+}
 fetchMessages(currentPage)
-
-function navigateToEditPage(messageId) {
-  location.href = `editar-recado.html?id=${messageId}`
-}
 
 prevPage.addEventListener('click', () => {
   if (currentPage > 1) {

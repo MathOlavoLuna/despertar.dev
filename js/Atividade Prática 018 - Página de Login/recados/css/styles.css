@@ -15,47 +15,31 @@ body,
 input,
 button,
 textarea {
-  font-family: DM Sans;
+ 
 }
 
 
 a {
   text-decoration: none;
-  color: #087F5B;
+  color: #4749D3;
   font-weight: 500;
   line-height: 140%;
   letter-spacing: -0.5px;
 }
 
-.container {
-  width: 30rem;
-}
-
-.header {
+header{
   width: 100%;
-  margin: 3rem 0;
-  text-align: center;
+  height: 8%;
 }
 
-.header .logo {
-  margin-bottom: 4rem;
+
+ .container{
+  height: 100%;
+  width: 40%;
 }
 
-.header .title {
-  color: #212529;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 1rem;
-}
-
-.header .subtitle {
-  color: #495057;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.5px;
+.color-violet{
+  background-color:#4749d3;
 }
 
 .form-control {
@@ -134,7 +118,7 @@ a {
   width: 100%;
   padding: 0px 1.5rem;
   border-radius: 16px;
-  background: #087F5B;
+  background: #4861eb;
   margin-top: 1.5rem;
   border: 0;
   color: #fff;
@@ -145,8 +129,9 @@ a {
   transition: ease .2s;
 }
 
+
 .btn-submit:hover {
-  background: #0a936a;
+  background: #5630ff;
 }
 
 /* Estilos dos cards de recado */

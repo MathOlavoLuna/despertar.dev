@@ -1,14 +1,14 @@
-const formLogin = document.getElementById('form-login')
+const signIn = document.getElementById('sign-in')
 
-const emailInput = document.getElementById('email-login')
-const passwordInput = document.getElementById('password-login')
+const userInput = document.getElementById('username')
+const passloginInput = document.getElementById('password')
 
-formLogin.addEventListener('submit', (e) => {
+signIn.addEventListener('click', (e) => {
   e.preventDefault() // impedir comportamento padrão do submit
 
   const data = {
-    email: emailInput.value,
-    password: passwordInput.value,
+    name: userInput.value,
+    password: passloginInput.value,
   }
 
   login(data)
@@ -28,4 +28,23 @@ async function login(data) {
     console.log('Erro ao fazer login', error)
   }
 }
+
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
 
