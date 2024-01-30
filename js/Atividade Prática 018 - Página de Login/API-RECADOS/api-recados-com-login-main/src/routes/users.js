@@ -42,9 +42,9 @@ router.post('/signup', validateUserRegistration, async (request, response) => {
 
 // Define a rota de login
 router.post('/login', async (request, response) => {
-  const { email, password } = request.body
+  const { name, password } = request.body
 
-  const user = users.find(user => user.email === email)
+  const user = users.find(user => user.name === name)
 
   const passwordMatch = await bcrypt.compare(password, user.password)
 

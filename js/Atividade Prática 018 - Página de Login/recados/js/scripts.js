@@ -1,21 +1,21 @@
-  const exampleModal = document.getElementById('exampleModal')
-  if (exampleModal) {
-    exampleModal.addEventListener('show.bs.modal', event => {
-      // Button that triggered the modal
-      const button = event.relatedTarget
-      // Extract info from data-bs-* attributes
-      const recipient = button.getAttribute('data-bs-whatever')
-      // If necessary, you could initiate an Ajax request here
-      // and then do the updating in a callback.
+const exampleModal = document.getElementById('exampleModal')
+if (exampleModal) {
+  exampleModal.addEventListener('show.bs.modal', event => {
+    // Button that triggered the modal
+    const button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    const recipient = button.getAttribute('data-bs-whatever')
+    // If necessary, you could initiate an Ajax request here
+    // and then do the updating in a callback.
 
-      // Update the modal's content.
-      const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-body input')
+    // Update the modal's content.
+    const modalTitle = exampleModal.querySelector('.modal-title')
+    const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-      modalTitle.textContent = `New message to ${recipient}`
-      modalBodyInput.value = recipient
-    })
-  }
+    modalTitle.textContent = `New message to ${recipient}`
+    modalBodyInput.value = recipient
+  })
+}
 
 
 const messagesContainer = document.querySelector('.messages-list')
@@ -76,14 +76,28 @@ async function fetchMessages(page) {
       const editIcon = messageCard.querySelector('.fa-edit')
 
       editIcon.addEventListener('click', () => {
-        const editModal = new Bootstrap.modal('#edit-mess') 
         const messageId = editIcon.getAttribute('data-id')
+        const formEditMessage = document.getElementById('form-edit-message')
+        const titleInputEdit = document.getElementById('title-edit')
+        const descriptionInputEdit = document.getElementById('description-edit')
 
-        editModal.show(messadeId)
-        console.log(messageId);
+        formEditMessage.addEventListener('submit', (event) => {
+          event.preventDefault()
+        
+          const titleValue = titleInputEdit.value
+          const descriptionValue = descriptionInputEdit.value
+        
+          const editMessage = {
+            title: titleValue,
+            description: descriptionValue
+          }
+        
+          updateMessage(messageId, editMessage)
+        })
+
       })
     });
-  } catch(error) {
+  } catch (error) {
     console.log(error);
   }
 
@@ -103,4 +117,19 @@ nextPage.addEventListener('click', () => {
     fetchMessages(currentPage)
   }
 })
+
+
+async function updateMessage(messageId, editMessage) {
+  try {
+    const response = await api.put(`/notes/${messageId}`, editMessage)
+
+    if (response.status === 200) {
+      alert('Recado atualizado com sucesso!')
+    }
+
+    location.href = "listar-recados.html"
+  } catch (error) {
+    console.log('Erro ao atualizar recado.')
+  }
+}
 

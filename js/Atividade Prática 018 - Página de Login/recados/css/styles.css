@@ -129,6 +129,12 @@ header{
   transition: ease .2s;
 }
 
+.logo{
+  
+  width: 13rem;
+  height: 1.8rem;
+}
+
 
 .btn-submit:hover {
   background: #5630ff;
@@ -166,7 +172,7 @@ header{
 }
 
 .card-icons .fa-edit {
-  color: #087F5B;
+  color: #4749D3;
 }
 
 .card-icons .fa-trash {
@@ -188,7 +194,7 @@ header{
 
 /* Estilo para os botões de página */
 .pagination button {
-  background-color: #087F5B;
+  background-color: #4749D3;
   color: #fff;
   border: none;
   padding: 10px 15px;
@@ -199,7 +205,7 @@ header{
 
 /* Estilo para o botão de página ativa */
 .pagination button.active {
-  background-color: #0a936a;
+  background-color: #3a3cd3;
 }
 
 .add-message {

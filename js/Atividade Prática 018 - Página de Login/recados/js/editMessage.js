@@ -1,6 +1,6 @@
 const formEditMessage = document.getElementById('form-edit-message')
-const titleInput = document.getElementById('title-edit')
-const descriptionInput = document.getElementById('description-edit')
+const titleInputEdit = document.getElementById('title-edit')
+const descriptionInputEdit = document.getElementById('description-edit')
 
 const urlParams = new URLSearchParams(window.location.search) //?id="25"
 const messageId = urlParams.get("id") //25
@@ -12,8 +12,8 @@ async function populateEditForm() {
     const response = await api.get(`/notes/list/${messageId}`)
     const message = response.data
 
-    titleInput.value = message.title
-    descriptionInput.value = message.description
+    titleInputEdit.value = message.title
+    descriptionInputEdit.value = message.description
 
   } catch (error) {
     console.log('Erro ao buscar recado', error)
@@ -25,8 +25,8 @@ populateEditForm()
 formEditMessage.addEventListener('submit', (event) => {
   event.preventDefault()
 
-  const titleValue = titleInput.value
-  const descriptionValue = descriptionInput.value
+  const titleValue = titleInputEdit.value
+  const descriptionValue = descriptionInputEdit.value
 
   const editMessage = {
     title: titleValue,
