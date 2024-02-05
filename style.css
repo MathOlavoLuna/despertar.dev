@@ -1,60 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: rgb(255, 240, 222);
+body {
     font-family: 'Poppins', sans-serif;
+    background-color: #212A42;
 }
 
-h1{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 4rem;
-    text-align: center;
-    margin: 2rem;
+.header {
+    background-color: bisque;
+    padding: 2rem;
 }
 
-span{
+.grow {
     color: #FF8533;
-}
-
-.conteiner{
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-    height: fit-content;
-    min-width: 30%;
-    background-color: aquamarine;
-}
-
-.flux{
-    height: 100%;
-    display: flex;
-    justify-content:space-between;
-}
-
-.repositorio{
-    display: block;
-
 }
 
 .card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 500px;
-    width: 400px;
-    margin: 2rem;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
     background-color: black;  
 } 
-
-.atividade{
-    font-size: 2rem;
-    color: aquamarine;
-
-}
 
 .img{
     background-size: cover;
@@ -62,17 +28,22 @@ span{
     width: 100%;
 }
 
-.botao{
-    margin: auto;
-    padding: 15px;
-    background-color: blueviolet;
+.botao {
+    width: 100px;
+    height: 40px;
+    margin-top: 1rem;
     border: 0;
-    border-radius: 5px; 
+    background-color: #212A42;
+    
 }
 
-.botao > a{
-    color: black;
+.botao > a {
+    color: #FF8533;
     text-decoration: none;
+}
+
+.atividade {
+    color: white;
 }
 
 #img1{
@@ -168,33 +139,4 @@ span{
 
 #img-fim2 {
     background-image: url(images/RickAndMorty.png) ;
-}
-
-
-@media screen and (max-width: 700px) {
-
-    h1{
-        font-size: 2rem;
-    }
-    .conteiner{
-        flex-direction: column;
-    }
-
-    .flux{
-        flex-direction: column;
-        
-    }
-
-    .card{
-        height: 60%;
-        width: auto;
-    }
-
-    .atividade{
-        font-size: 1.25rem;
-    }
-
-    .img{
-        background-size: 30rem;
-    }
 }
