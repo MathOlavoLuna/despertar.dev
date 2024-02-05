@@ -1,0 +1,189 @@
+.banner-initial {
+    background-image: url(/src/assets/images/growcast-01.png);
+    background-size: cover;
+    height: 75vh;
+}
+
+.alinha-p{
+    cursor: pointer;
+    color: rgba(240, 248, 255, 0.377);
+    height: 10px;
+}
+.alinha-p:hover {
+    color: rgba(240, 248, 255, 0.637);
+}
+
+#inicio {
+    color: white;
+}
+
+.growcast-logo {
+    height: 585px;
+}
+
+
+.growcast-podcast{
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.growcast-title {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.growcast-button {
+    width: 110px;
+    font-weight: bold;
+}
+
+.growcast-button > img {
+    width: 20px;
+}
+
+/* cast */
+.growcast-card {
+    word-break: break-all;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    min-height: 240px;
+}
+
+.growcast-card:hover {
+    position: static;
+    border: #FFF 1px;
+    transition: 1s;
+}
+
+.growcast-card:hover > img {
+    transition: 1s;
+    width: 300px;
+    
+}
+
+.growcast-card:hover > .growcast-details {
+    visibility: visible;
+    width: 300px;
+    transition: 1s;
+}
+
+.growcast-details{
+    visibility: hidden;
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+}
+
+/* WEB */
+.webinar-card {
+    word-break: break-all;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    min-height: 240px;
+}
+
+.webinar-card:hover {
+    position: static;
+    border: #FFF 1px;
+    transition: 1s;
+}
+
+.webinar-card:hover > img {
+    transition: 1s;
+    width: 300px;
+    
+}
+
+.webinar-card:hover > .growcast-details {
+    visibility: visible;
+    width: 300px;
+    transition: 1s;
+}
+
+/* UX */
+.uxui-card {
+    word-break: break-all;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    min-height: 240px;
+}
+
+.uxui-card:hover {
+    position: static;
+    border: #FFF 1px;
+    transition: 1s;
+}
+
+.uxui-card:hover > img {
+    transition: 1s;
+    width: 300px;
+    
+}
+
+.uxui-card:hover > .growcast-details {
+    visibility: visible;
+    width: 300px;
+    transition: 1s;
+}
+
+/* DIVERSOS */
+
+.diversos-card {
+    word-break: break-all;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    min-height: 240px;
+}
+
+.diversos-card:hover {
+    position: static;
+    border: #FFF 1px;
+    transition: 1s;
+}
+
+.diversos-card:hover > img {
+    transition: 1s;
+    width: 300px;
+    
+}
+
+.diversos-card:hover > .growcast-details {
+    visibility: visible;
+    width: 300px;
+    transition: 1s;
+}
+.cor-white{
+    color: #FFF;
+}
+
+
+.pointer {
+    cursor: pointer !important;
+}
+
+
+
+
+.growflix-icon {
+    width: 120px;
+}
+
+.growflix-row{
+    width: 800px;
+}
+
+.font-pequena{
+    font-size: .9rem;
+}
+
+.close {
+    color: #ffffff !important; /* Set the color to white */
+}
+
+.modal{
+    --bs-modal-width: 100% !important;
+}
