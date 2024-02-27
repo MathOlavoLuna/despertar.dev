@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-<?php 
+    <pre>
+        
     #01
     $resultados = array();
 
@@ -76,9 +77,9 @@
             global $listaProdutos;
 
             foreach ($listaProdutos as $key => $produtos) {
-                echo '<strong>'. $produtos['nome'] .'</strong>' . ':' . $produtos['preço'];
-                echo '<br>';
-                echo '<hr>';
+                echo '<-strong>'. $produtos['nome'] .'</-strong>' . ':' . $produtos['preço'];
+                echo '<-br>';
+                echo '<-hr>';
             };
         };
 
@@ -89,8 +90,8 @@
                 if($produtos['nome'] == $name){
                     unset($listaProdutos[$key]);
                     echo 'Excluido com Sucesso!';
-                    echo '<br>';
-                    echo '<hr>';
+                    echo '<-br>';
+                    echo '<-hr>';
                     listaProdutos();
                 }
             };
@@ -104,7 +105,6 @@
         listaProdutos();
         excluir('Caneta');
 
-    
-?>
+    </pre>
 </body>
 </html>
