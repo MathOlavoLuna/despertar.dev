@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Vantely;
+    src: url('./assets/fonts/Vantely.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fonte {
+    font-family: 'Vantely';
+    font-size: 1.4rem;
+}
+
+.grow-orange {
+    color: #FF8533;
+}
+
+.grow-blue {
+    color: #2B385B;
+}
+
+.background {
+    background: linear-gradient(135deg, #FF8533 10%,  #2B385B );
+    height: 55rem;
+}

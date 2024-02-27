@@ -125,6 +125,10 @@ body {
     background-image: url(images/20.png);
 }
 
+#img21{
+    background-image: url(./images/21.png);
+}
+
 #padaria{
     background-image: url(images/padaria.png);
 }
@@ -140,3 +144,8 @@ body {
 #img-fim2 {
     background-image: url(images/RickAndMorty.png) ;
 }
+
+#growFlix{
+    background-image: url(./images/growflix.png);
+}
+
